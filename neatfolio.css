@@ -721,7 +721,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
   width:102px;
   height:20px;
 }
-.blog-posts.index .blog-post-content.photo .like-reblog-buttons {
+.blog-posts.index .blog-post-content.photo .like-reblog-buttons, .blog-posts.index .blog-post-content.link .like-reblog-buttons {
   margin:5px auto;
 }
 .share-button, .reblog-button, .permalink-button a {
