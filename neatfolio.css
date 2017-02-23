@@ -935,6 +935,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;*/
+    border:1px solid rgba(0,0,0,0.1);
 }
 
 .blog-posts.index .blog-post-content.photo:hover img {
@@ -943,6 +944,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
     -ms-transform:scale(1);
     -o-transform:scale(1);
     transform:scale(1);*/
+    border:1px solid rgba(0,0,0,0.2);
 }
 
 .blog-posts.index .blog-post-content.photo:hover .overlay {
