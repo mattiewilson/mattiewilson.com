@@ -947,12 +947,24 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
     border:1px solid rgba(0,0,0,0.2);
 }
 
+.blog-posts.index .blog-post-content.link img {
+    border-width:1px 1px 0;
+    border-style:solid;
+    border-color:rgba(0,0,0,0.1);
+}
+
+.blog-posts.index .blog-post-content.link:hover img {
+    border-width:1px 1px 0;
+    border-style:solid;
+    border-color:rgba(0,0,0,0.2);
+}
+
 .blog-posts.index .blog-post-content.photo:hover .overlay, .blog-posts.index .blog-post-content.link:hover .overlay {
-  visibility:visible;
+/*visibility:visible;
   display:block !important;
   opacity:1;
   transition-delay:0s;
-  cursor: pointer;
+  cursor: pointer;*/
 }
 
 .blog-post h2 {
@@ -1025,14 +1037,14 @@ h2.blog-post-title {
  * Links
  */
 
-.blog-post a.link-contents {
+.blog-post .link-contents h2 {
   background:rgba(255,255,255,0.5);
   padding:20px;
   border:1px solid rgba(0,0,0,0.1);
   display:block;
 }
 
-.blog-post a.link-contents:hover {
+.blog-post .link-contents:hover h2 {
   border:1px solid rgba(0,0,0,0.2);
   background:rgba(255,255,255,0.3);
 }
@@ -1148,7 +1160,7 @@ a:hover, .copy a, .copy a:hover {
   text-decoration: underline;
 }
 
-body [class^="icon-"]:hover, #navigation a:hover, #hirebutton a:hover, .link-contents:hover, .copy .read_more_container a {
+body [class^="icon-"]:hover, #navigation a:hover, #hirebutton a:hover, .link-contents a:hover, .copy .read_more_container a {
   text-decoration: none !important;
 }
 
