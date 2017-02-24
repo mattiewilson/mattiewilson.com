@@ -1,11 +1,11 @@
 <html>
   <!--
   ==========================================================================
-      __  __                 __          __  _    
+      __  __                 __          __  _
      / /_/ /  ___ __ _  ___ / /__ ____  / /_(_)___
     / __/ _ \/ -_)  ' \/ -_) / _ `/ _ \/ __/ / __/
-    \__/_//_/\__/_/_/_/\__/_/\_,_/_//_/\__/_/\__/ 
-                                                  
+    \__/_//_/\__/_/_/_/\__/_/\_,_/_//_/\__/_/\__/
+
     NeatFolio v1.2
     Updated: 10 November, 2016
     Website: http://themelantic.com
@@ -248,12 +248,12 @@
         border-color: {color:Line Color};
       }
 
-      {block:PermalinkPage} 
+      {block:PermalinkPage}
         .blog-post, #comments-block {
           width:100% !important;
           max-width:800px !important;
         }
-      {/block:PermalinkPage} 
+      {/block:PermalinkPage}
 
       {block:IfNotShowPageBorder}
         body {
@@ -326,8 +326,8 @@
               <div id="avatar"><a href="/" title="{lang:Home}"><img src="{PortraitURL-128}" class="{AvatarShape}" alt="{Title}" /></a></div>
             {/block:IfShowAvatar}
 
-            {block:IfLogoImage}<div id="logo"><a href="/" title="{lang:Home}"><img src="{image:Logo}" alt="{Title}" style="width:{text:Logo Width}px; max-width:80%;" /></a></div>{/block:IfLogoImage} 
-    
+            {block:IfLogoImage}<div id="logo"><a href="/" title="{lang:Home}"><img src="{image:Logo}" alt="{Title}" style="width:{text:Logo Width}px; max-width:80%;" /></a></div>{/block:IfLogoImage}
+
             {block:IfShowTitle}
               <h1 class="blog-title">
                 <a href="/" title="{Title}">{Title}</a>
@@ -457,18 +457,18 @@
           {/block:IfShowLatestTweets}
 
           {block:IfShowGroupBlogMembers}
-            {block:GroupMembers} 
+            {block:GroupMembers}
               <div class="group-members" id="group-block">
                 <h4>{lang:Group members}</h4>
                 {block:GroupMember}
                   <a href="{GroupMemberURL}"><img src="{GroupMemberPortraitURL-128}" title="{GroupMemberTitle}" /></a>
                 {/block:GroupMember}
               </div>
-            {/block:GroupMembers} 
+            {/block:GroupMembers}
           {/block:IfShowGroupBlogMembers}
 
           {block:IfShowFollowing}
-            {block:Following} 
+            {block:Following}
               <div id="following-block">
                 <h4>{lang:Following}</h4>
                   <ul class="following">
@@ -573,7 +573,7 @@
                   }
                 </script>
               {/block:IfEnableHeaderSlideshow}
-    
+
 
               {block:IfShowInstagramPhotos}
                 {block:IfInstagramAccessToken}
@@ -747,11 +747,21 @@
                     {/block:Chat}
 
                     {block:Link}
-                      <a href="{URL}" {Target} class="link-contents">
+                      <div class="photo-image link-contents">
+                        <a href="{URL}" {Target}>
+                          {block:Thumbnail}
+                            <div class="media">
+                              <img src="{Thumbnail-HighRes}" alt="{Description}" />
+                            </div>
+                          {/block:Thumbnail}
                           <h2 class="blog-post-title">{Name}</h2>
-                          {block:Description}<div class="copy">{Description}</div>{/block:Description}
-                          <h4><span class="icon-arrow-right" /></h4>
-                      </a>
+                          {block:Description}
+                            <div class="copy">
+                              {Description}
+                            </div>
+                          {/block:Description}
+                        </a>
+                      </div>
                     {/block:Link}
 
                     {block:IndexPage}
@@ -767,7 +777,7 @@
 
                             {block:HasTags}<div class="tags">{block:Tags}<a href="{TagURL}">#{Tag}</a> {/block:Tags}</div>{/block:HasTags}
 
-                            {block:NoteCount}<a href="{Permalink}" class="source-link">{NoteCountWithLabel}</a>{/block:NoteCount} 
+                            {block:NoteCount}<a href="{Permalink}" class="source-link">{NoteCountWithLabel}</a>{/block:NoteCount}
 
                             {block:RebloggedFrom}
                               <a href="{ReblogParentURL}" class="source-link">{lang:Via} {ReblogParentName}</a>
@@ -799,27 +809,27 @@
                               <li><a role="menuitem" target="_blank" class="twitter" href="https://twitter.com/intent/tweet?url={ShortURL}"><span class="icon-twitter"></span><span class="social-link">Share on Twitter</span></a></li>
                               <li><a role="menuitem" target="_blank" class="pinterest" href="https://pinterest.com/pin/create/button/?url={ShortURL}{block:Text}&media={PortraitURL-128}{/block:Text}{block:Photo}&media={PhotoURL-HighRes}{/block:Photo}{block:Panorama}&media={PhotoURL-Panorama}{/block:Panorama}{block:Photoset}{block:Photos}&media={PhotoURL-500}{/block:Photos}{/block:Photoset}{block:Quote}&media={PortraitURL-128}{/block:Quote}{block:Link}&media={PortraitURL-128}{/block:Link}{block:Chat}&media={PortraitURL-128}{/block:Chat}{block:Audio}&media={PortraitURL-128}{/block:Audio}{block:Video}&media={PortraitURL-128}{block:VideoThumbnail}&media={VideoThumbnailURL}{/block:VideoThumbnail}{/block:Video}{block:Answer}&media={PortraitURL-128}{/block:Answer}{block:PostTitle}&description={PostTitle}{/block:PostTitle}"><span class="icon-pinterest"></span><span class="social-link">Share on Pinterest</span></a></li>
                               <li><a role="menuitem" target="_blank" class="google-plus" href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={ShortURL}"><span class="icon-googleplus"></span><span class="social-link">Share on Google+</span></a></li>
-                            </ul> 
+                            </ul>
                           </div>
-                          <div class="reblog-button">                   
-                            {block:IfUseBlackIcons}{ReblogButton color="black" size="15"}{/block:IfUseBlackIcons}                 
+                          <div class="reblog-button">
+                            {block:IfUseBlackIcons}{ReblogButton color="black" size="15"}{/block:IfUseBlackIcons}
                             {block:IfNotUseBlackIcons}{ReblogButton color="white" size="15"}{/block:IfNotUseBlackIcons}
                           </div>
                           <div class="like-button">
-                            {block:IfUseBlackIcons}{LikeButton color="black" size="15"}{/block:IfUseBlackIcons}                 
+                            {block:IfUseBlackIcons}{LikeButton color="black" size="15"}{/block:IfUseBlackIcons}
                             {block:IfNotUseBlackIcons}{LikeButton color="white" size="15"}{/block:IfNotUseBlackIcons}
                           </div>
                         </div>
                         {/block:IfShowLikeReblogButtons}
                       </div><!-- /.permalink -->
-                      
+
                       {block:PostNotes}
                         <div class="notecontainer">
-                          {block:NoteCount}<h2 class="blog-post-title"><a href="{Permalink}">{NoteCountWithLabel}</a></h2>{/block:NoteCount} 
+                          {block:NoteCount}<h2 class="blog-post-title"><a href="{Permalink}">{NoteCountWithLabel}</a></h2>{/block:NoteCount}
                           {PostNotes-64}
                         </div>
                         <div class="clear"></div>
-                      {/block:PostNotes}     
+                      {/block:PostNotes}
 
                     {block:IndexPage}
                     </div><!-- /.overlay -->
@@ -834,7 +844,7 @@
                           <div id="disqus_thread"></div>
                           <script type="text/javascript">
                               var disqus_shortname = '{text:Disqus Shortname}';
-                              var disqus_url = '{Permalink}'; 
+                              var disqus_url = '{Permalink}';
                               (function() {
                                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
                                   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
@@ -878,7 +888,7 @@
               {block:PreviousDayPage}<li><a rel="prev" href="{PreviousDayPage}"><span class="icon-arrow-left"></span> {ShortMonth} {DayOfMonth}</a></li>{/block:PreviousDayPage}
               {block:NextDayPage}<li><a rel="next" href="{NextDayPage}" class="nextpage">{ShortMonth} {DayOfMonth} <span class="icon-arrow-right"></span></a></li>{/block:NextDayPage}
             </ul>
-          {/block:DayPagination}   
+          {/block:DayPagination}
 
         </div>
 
@@ -926,7 +936,7 @@
                 });
             {/block:IndexPage}
         });
-      }, delay); 
+      }, delay);
     })
     </script>
 
@@ -942,7 +952,7 @@
           {block:PreviousPost}Mousetrap.bind('left', function() { window.location.href="{PreviousPost}"; });{/block:PreviousPost}
           {block:NextPost}Mousetrap.bind('right', function() { window.location.href="{NextPost}"; });{/block:NextPost}
         </script>
-      {/block:PermalinkPagination} 
+      {/block:PermalinkPagination}
       {block:DayPagination}
         <script>
           {block:PreviousDayPage}Mousetrap.bind('left', function() { window.location.href="{PreviousDayPage}"; });{/block:PreviousDayPage}
@@ -1014,7 +1024,7 @@
     {/block:IfEnableFacebookComments}
 
     {block:IfEnableInfiniteScroll}
-      {block:IndexPage} 
+      {block:IndexPage}
         <script>
         $('.blog-posts').infinitescroll({
             loading: {
@@ -1024,8 +1034,8 @@
               speed: 'fast',
               start: undefined
             },
-            navSelector  : '.pager',            
-            nextSelector : '.pager li a.nextpage',    
+            navSelector  : '.pager',
+            nextSelector : '.pager li a.nextpage',
             itemSelector : '.blog-post'
           },
               // trigger Masonry as a callback
@@ -1049,22 +1059,22 @@
                 var $newElems = $( newElements ).css({ opacity: 0 });
 
                 // Create array of new elements ID's
-                var $newElemsIDs = $newElems.map(function () { 
-                    return this.id; 
+                var $newElemsIDs = $newElems.map(function () {
+                    return this.id;
                 }).get();
 
                 $newElems.imagesLoaded(function(){
                   $newElems.animate({ opacity: 1 });
-                  $container.masonry( 'appended', $newElems, true ); 
+                  $container.masonry( 'appended', $newElems, true );
                 });
 
                 // Pull back the Tumblr like state
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
 
               }
-        );        
+        );
         </script>
-      {/block:IndexPage} 
+      {/block:IndexPage}
     {/block:IfEnableInfiniteScroll}
 
     {block:IfGoogleAnalyticsID}

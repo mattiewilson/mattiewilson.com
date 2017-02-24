@@ -4,7 +4,7 @@
 
 body {
   font-family: "Helvetica Neue", "Helvetica", Georgia, "Times New Roman", Times, serif;
-  color: #444; 
+  color: #444;
   background-color:#213f52;
   font-size: 16px;
   line-height: 1.5em;
@@ -251,7 +251,7 @@ body {
   padding:20px 0 0 0;
 }
 
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
   #twitter-block, #following-block, #likes-block, #group-block {
     display:none;
   }
@@ -594,7 +594,7 @@ body {
   z-index:3
 }
 
-/* 
+/*
 In-post copy and images
 */
 
@@ -721,7 +721,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
   width:102px;
   height:20px;
 }
-.blog-posts.index .blog-post-content.photo .like-reblog-buttons {
+.blog-posts.index .blog-post-content.photo .like-reblog-buttons, .blog-posts.index .blog-post-content.link .like-reblog-buttons {
   margin:5px auto;
 }
 .share-button, .reblog-button, .permalink-button a {
@@ -849,7 +849,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
 
 /*
  * Blog posts
- */ 
+ */
 
 #content-wrapper {
   display: none;
@@ -899,13 +899,13 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
   margin: 20px -30px 0 -30px;
 }
 
-.blog-posts.index .blog-post-content.photo {
+.blog-posts.index .blog-post-content.photo, .blog-posts.index .blog-post-content.link {
   padding: 0;
   border-bottom:0px;
 }
 
-.blog-posts.index .blog-post-content.photo .overlay {
-  width:100%; 
+.blog-posts.index .blog-post-content.photo .overlay, .blog-posts.index .blog-post-content.link .overlay {
+  width:100%;
   height:70px;
   position:absolute;
   bottom:0px;
@@ -915,7 +915,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
   background-color:rgba(255,255,255,0.75);
   color:#fff;
   visibility:hidden;
-  opacity:0;  
+  opacity:0;
   text-align:center;
   transition:visibility 0s linear 0.1s,opacity 0.1s linear;
 }
@@ -930,7 +930,7 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
     -ms-transform:scale(1.1);
     -o-transform:scale(1.1);
     transform:scale(1.1);
-    -webkit-transition: all 0.3s ease; 
+    -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -947,12 +947,24 @@ input:-moz-placeholder::before  { font-family: icomoon; content:'\e613'; opacity
     border:1px solid rgba(0,0,0,0.2);
 }
 
-.blog-posts.index .blog-post-content.photo:hover .overlay {
-  visibility:visible;
+.blog-posts.index .blog-post-content.link img {
+    border-width:1px 1px 0;
+    border-style:solid;
+    border-color:rgba(0,0,0,0.1);
+}
+
+.blog-posts.index .blog-post-content.link:hover img {
+    border-width:1px 1px 0;
+    border-style:solid;
+    border-color:rgba(0,0,0,0.2);
+}
+
+.blog-posts.index .blog-post-content.photo:hover .overlay, .blog-posts.index .blog-post-content.link:hover .overlay {
+/*visibility:visible;
   display:block !important;
   opacity:1;
   transition-delay:0s;
-  cursor: pointer;
+  cursor: pointer;*/
 }
 
 .blog-post h2 {
@@ -1025,14 +1037,14 @@ h2.blog-post-title {
  * Links
  */
 
-.blog-post a.link-contents {
+.blog-post .link-contents h2 {
   background:rgba(255,255,255,0.5);
   padding:20px;
   border:1px solid rgba(0,0,0,0.1);
   display:block;
 }
 
-.blog-post a.link-contents:hover {
+.blog-post .link-contents:hover h2 {
   border:1px solid rgba(0,0,0,0.2);
   background:rgba(255,255,255,0.3);
 }
@@ -1110,8 +1122,8 @@ div.line.odd {
   margin-bottom:1.5em;
 }
 
-.audio_container iframe, .video_container iframe,  
-.audio_container object, .video_container object,  
+.audio_container iframe, .video_container iframe,
+.audio_container object, .video_container object,
 .audio_container embed, .video_container embed {
   position: absolute;
   top: 0;
@@ -1122,7 +1134,7 @@ div.line.odd {
 
 /*
  * Comments
- */ 
+ */
 
 #comments-block {
   padding:30px;
@@ -1148,7 +1160,7 @@ a:hover, .copy a, .copy a:hover {
   text-decoration: underline;
 }
 
-body [class^="icon-"]:hover, #navigation a:hover, #hirebutton a:hover, .link-contents:hover, .copy .read_more_container a {
+body [class^="icon-"]:hover, #navigation a:hover, #hirebutton a:hover, .link-contents a:hover, .copy .read_more_container a {
   text-decoration: none !important;
 }
 
@@ -1186,10 +1198,10 @@ body [class^="icon-"]:hover, #navigation a:hover, #hirebutton a:hover, .link-con
 }
 
 @keyframes bounce {
-  0%, 100% { 
+  0%, 100% {
     transform: scale(0.0);
     -webkit-transform: scale(0.0);
-  } 50% { 
+  } 50% {
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
